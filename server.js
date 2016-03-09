@@ -7,7 +7,7 @@ var port = process.env.PORT || 3000;
 //var static = express();
 //app.use('/static', static);
 //static.use(express.static('public')); 
-app.use("/landing", express.static(__dirname+"/public"));
+app.use("/", express.static(__dirname+"/public"));
 
 app.use(require('cookie-parser')());
 app.use(require('body-parser').json());

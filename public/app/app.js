@@ -29,7 +29,7 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	                $rootScope.go("landing");
 	            }
 	        },
-			templateUrl: "index.html",
+			templateUrl: "/index.html",
 			controller: "headerCtrl"
 		})
 		.state('app.home', {
