@@ -1,6 +1,6 @@
 mixeet.factory('oauth', function($http, $location){
 	return {
-        authGet = function(url, success_callback, error_callback){
+        authGet : function(url, success_callback, error_callback){
 			if(localStorage.getItem("auth")){
 				var auth = JSON.parse(localStorage.getItem("auth"));
 				$http.get(url, {headers: {
@@ -15,7 +15,7 @@ mixeet.factory('oauth', function($http, $location){
 				window.location = "/landing";
 			}
 		},
-		authPost = function(url, data, success_callback, error_callback){
+		authPost : function(url, data, success_callback, error_callback){
 			if(localStorage.getItem("auth")){
 				var auth = JSON.parse(localStorage.getItem("auth"));
 			
