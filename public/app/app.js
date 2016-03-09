@@ -7,6 +7,19 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 		requireBase: false
 	});
 
+	var getJSONLocal = function(key){
+		var result = null;
+		try{
+			var json = localStorage[key];
+			if(json !== undefined){
+				result = JSON.parse(json);
+			}
+		}catch(e){
+
+		}
+		return result;
+	}
+
 	var static_path ="static/app";
 
 	$urlRouterProvider.otherwise("/");
@@ -19,7 +32,7 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	                $rootScope.go("app.home");
 	            }
         	},
-        	templateUrl: "index.html",
+        	templateUrl: "/app/landing/main.tpl.html",
 			controller: "landingCtrl"
 		})
 		.state('app', {
@@ -29,7 +42,7 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	                $rootScope.go("landing");
 	            }
 	        },
-			templateUrl: "/index.html",
+			templateUrl: "/app/main.tpl.html",
 			controller: "headerCtrl"
 		})
 		.state('app.home', {
@@ -41,7 +54,7 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	        },
 			views: {
 	            content: {
-	                templateUrl: '/home/main.tpl.html',
+	                templateUrl: '/app/home/main.tpl.html',
 	                controller: 'homeCtrl'
 	            	}
 	        	}  
@@ -55,7 +68,7 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	        },
 			views: {
 	            content: {
-	                templateUrl: '/collections/main.tpl.html',
+	                templateUrl: '/app/collections/main.tpl.html',
 	                controller: 'collectionsCtrl'
 	            	}
 	        	}  
@@ -69,7 +82,7 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	        },
 			views: {
 	            content: {
-	                templateUrl: '/events/main.tpl.html',
+	                templateUrl: '/app/events/main.tpl.html',
 	                controller: 'eventsCtrl'
 	            	}
 	        	}  
@@ -83,7 +96,7 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	        },
 			views: {
 	            content: {
-	                templateUrl: '/achievements/main.tpl.html',
+	                templateUrl: '/app/achievements/main.tpl.html',
 	                controller: 'achievementsCtrl'
 	            	}
 	        	}  
