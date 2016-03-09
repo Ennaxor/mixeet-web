@@ -12,7 +12,7 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	$urlRouterProvider.otherwise("/");
 	
 	$stateProvider
-		.state('/landing', {
+		.state('landing', {
 			url: "/landing",
 			onEnter: function ($rootScope) {
 	            if (getJSONLocal("auth")) {
