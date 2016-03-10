@@ -17,7 +17,7 @@ mixeet.controller('landingCtrl', function($scope, $interval, $location, $state, 
 	//landing?token=ya29.oAJafBQhllwzbUw23cHdXYDGgfk834Kd0M15N9SjLQWSIqM342F7FfqROzbCs2cS2mCp32Xm5C8mLxpI
 
 	function signin(){
-		//window.location = "/users/signin";
+		window.location = "https://mixeet.herokuapp.com/users/signin";
 		//CONTROLAR REDIRECCION DE GOOGLE Y ENVIAR AUTORIZACION A BACKEND+
 		/*if(!req.query.code){
 			var scopes = ['https://www.googleapis.com/auth/youtube.readonly',
