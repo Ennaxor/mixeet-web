@@ -12,9 +12,33 @@ mixeet.controller('landingCtrl', function($scope, $interval, $location, $state, 
 		window.location = "/";
 	}
 
+	//var oauth2Client = new OAuth2('927674196118-l6i2kvibbp67g63hf0unvcu40552cntq.apps.googleusercontent.com', '49tddGVHoBgsf_rQ1ETgJlLg', 'http://localhost:3000/users/signin');
+
+	//landing?token=ya29.oAJafBQhllwzbUw23cHdXYDGgfk834Kd0M15N9SjLQWSIqM342F7FfqROzbCs2cS2mCp32Xm5C8mLxpI
 
 	function signin(){
-		window.location = "/users/signin";
+		//window.location = "/users/signin";
+		//CONTROLAR REDIRECCION DE GOOGLE Y ENVIAR AUTORIZACION A BACKEND+
+		/*if(!req.query.code){
+			var scopes = ['https://www.googleapis.com/auth/youtube.readonly',
+		    			  'https://www.googleapis.com/auth/plus.me',
+		    			  'https://www.googleapis.com/auth/plus.login',
+		    		      'https://www.googleapis.com/auth/userinfo.email'
+		    	         ];
+
+		  	var url = oauth2Client.generateAuthUrl({
+		  		access_type: 'online',
+		  		scope: scopes
+		  	});
+
+		  	res.redirect(url);
+		}
+		else{
+			oauth2Client.getToken(req.query.code, function(err, tokens){
+				window.location = "/users/signin";
+			});
+		}*/
+
 	}
 
 	$scope.signin = signin;

@@ -20,16 +20,17 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 		return result;
 	}
 
-	var static_path ="static/app";
+	//var static_path ="static/app";
 
 	$urlRouterProvider.otherwise("/");
 	
 	$stateProvider
 		.state('landing', {
 			url: "/landing",
-			onEnter: function ($rootScope) {
+			onEnter: function ($state) {
 	            if (getJSONLocal("auth")) {
-	                $rootScope.go("app.home");
+	               // $rootScope.go("app.home");
+	               $state.go('app');
 	            }
         	},
         	templateUrl: "/app/landing/main.tpl.html",
@@ -37,9 +38,10 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 		})
 		.state('app', {
 			url: "/",
-			onEnter: function ($rootScope) {
+			onEnter: function ($state) {
 	            if (!getJSONLocal("auth")) {
-	                $rootScope.go("landing");
+	               // $rootScope.go("landing");
+	               $state.go('landing');
 	            }
 	        },
 			templateUrl: "/app/main.tpl.html",
@@ -47,9 +49,9 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 		})
 		.state('app.home', {
 			url: "home",
-			onEnter: function ($rootScope) {
+			onEnter: function ($state) {
 	            if (!getJSONLocal("auth")) {
-	                $rootScope.go("landing");
+	               // $rootScope.go("landing");
 	            }
 	        },
 			views: {
@@ -61,9 +63,9 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 		})
 		.state('app.collections', {
 			url: "collections",
-			onEnter: function ($rootScope) {
+			onEnter: function ($state) {
 	            if (!getJSONLocal("auth")) {
-	                $rootScope.go("landing");
+	                //$rootScope.go("landing");
 	            }
 	        },
 			views: {
@@ -75,9 +77,9 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 		})
 		.state('app.events', {
 			url: "events",
-			onEnter: function ($rootScope) {
+			onEnter: function ($state) {
 	            if (!getJSONLocal("auth")) {
-	                $rootScope.go("landing");
+	                //$rootScope.go("landing");
 	            }
 	        },
 			views: {
@@ -89,9 +91,9 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 		})
 		.state('app.achievements', {
 			url: "achievements",
-			onEnter: function ($rootScope) {
+			onEnter: function ($state) {
 	            if (!getJSONLocal("auth")) {
-	                $rootScope.go("landing");
+	                //$rootScope.go("landing");
 	            }
 	        },
 			views: {
