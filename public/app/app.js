@@ -103,6 +103,10 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	            	}
 	        	}  
 		})
+		.state('otherwise', {
+			url: "*path",
+			templateUrl: "/app/landing/main.tpl.html"
+		});
 	/*	.state('home', {   
 	      url: "/",
 	      templateUrl: static_path+"/home/main.tpl.html",

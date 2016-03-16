@@ -3,11 +3,6 @@ var app = express();
 var http = require('http').Server(app);
 var port = process.env.PORT || 3120;
 
-var google = require('googleapis');
-var OAuth2 = google.auth.OAuth2;
-var oauth2Client = new OAuth2('927674196118-l6i2kvibbp67g63hf0unvcu40552cntq.apps.googleusercontent.com', '49tddGVHoBgsf_rQ1ETgJlLg', 'http://localhost:3000/users/signin');
-
-
 //DEFINE LA CARPETA DESDE LA CUAL SE SIRVEN ARCHIVOS ESTATICOS (CSS, JS, IMGS, etc...)
 //var static = express();
 //app.use('/static', static);

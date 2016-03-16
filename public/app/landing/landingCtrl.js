@@ -18,32 +18,11 @@ mixeet.controller('landingCtrl', function($scope, $interval, $location, $state, 
 
 	function signin(){
 		window.location = "https://mixeet.herokuapp.com/users/signin";
-		//CONTROLAR REDIRECCION DE GOOGLE Y ENVIAR AUTORIZACION A BACKEND+
-		/*if(!req.query.code){
-			var scopes = ['https://www.googleapis.com/auth/youtube.readonly',
-		    			  'https://www.googleapis.com/auth/plus.me',
-		    			  'https://www.googleapis.com/auth/plus.login',
-		    		      'https://www.googleapis.com/auth/userinfo.email'
-		    	         ];
-
-		  	var url = oauth2Client.generateAuthUrl({
-		  		access_type: 'online',
-		  		scope: scopes
-		  	});
-
-		  	res.redirect(url);
-		}
-		else{
-			oauth2Client.getToken(req.query.code, function(err, tokens){
-				window.location = "/users/signin";
-			});
-		}*/
-
+		
 	}
 
 	$scope.signin = signin;
 
-	
 
 	$scope.suggestions = [
 		{
