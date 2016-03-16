@@ -3,7 +3,7 @@ var mixeet = angular.module('mixeet', ['ui.router']);
 /* RUTAS ... */ 
 mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	$locationProvider.html5Mode({
-		enabled: true,
+		enabled: false,
 		requireBase: false
 	});
 
@@ -102,10 +102,6 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	                controller: 'achievementsCtrl'
 	            	}
 	        	}  
-		})
-		.state('otherwise', {
-			url: "*path",
-			templateUrl: "/app/landing/main.tpl.html"
 		});
 	/*	.state('home', {   
 	      url: "/",
