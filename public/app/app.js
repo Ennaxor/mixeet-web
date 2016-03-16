@@ -1,7 +1,7 @@
 var webAppController = {};
 var webAppFactory = {};
 
-var mixeet = angular.module('mixeet', ['ui.router'])
+var mixeet = angular.module('mixeet', ['ui.router', 'ngResource'])
 .controller(webAppController)
 .factory(webAppFactory)
 
