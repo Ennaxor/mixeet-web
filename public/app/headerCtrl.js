@@ -1,4 +1,4 @@
-mixeet.controller('headerCtrl', function($scope, $location, access, $rootScope, $timeout){
+mixeet.controller('headerCtrl', function($scope, $location, oauth, $rootScope, $timeout){
 
 	 $rootScope.$watch(function() { 
       	return $location.path(); 
