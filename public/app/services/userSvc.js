@@ -1,12 +1,17 @@
-webAppFactory.userSvc = function(){
+mixeet.factory('userSvc', ['apiSvc', function(apiSvc){
+//webAppFactory.userSvc = function(apiSvc){
 	return{
 		base: "users",
 		signin:function(){
-            
+            return apiSvc.rest(this.base+"/signin",{
+               get:{method:"GET", params:{}}
+            });
         },
 		me:function(){
-           
+            return apiSvc.rest(this.base+"/me",{
+                get:{method:"GET", params:{}}
+            });
         }
         //...
 	};
-};
+}]);
