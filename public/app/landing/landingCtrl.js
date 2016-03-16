@@ -1,4 +1,4 @@
-webAppController.landingCtrl = function($scope, $interval, $location, $state, $http, $rootScope){
+webAppController.landingCtrl = function($scope, $interval, $location, $state, $http, $rootScope, userSvc){
 	
 	if($location.search().token){
 		var auth = {token:$location.search().token};
@@ -14,7 +14,12 @@ webAppController.landingCtrl = function($scope, $interval, $location, $state, $h
 
 
 	function signin(){
-		window.location = "https://mixeet.herokuapp.com/users/signin";
+		//window.location = "https://mixeet.herokuapp.com/users/signin";
+		userSvc.signin().get({}, function(result){
+		}, function(){
+			
+		});
+
 		
 	}
 
