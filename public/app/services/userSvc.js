@@ -13,4 +13,4 @@ webAppFactory.userSvc = function(apiSvc){
         }
         //...
 	};
-});
+};

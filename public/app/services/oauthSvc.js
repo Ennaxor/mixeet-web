@@ -34,4 +34,4 @@ webAppFactory.oauth = function($http, $location, apiSvc){
 		}
     }
 
-});
+};

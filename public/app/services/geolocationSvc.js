@@ -23,4 +23,4 @@ webAppFactory.geolocation = function ($q, $window) {
         getCurrentPosition: getCurrentPosition
     };
 
-}]);
+};

@@ -30,4 +30,4 @@ webAppFactory.interceptor = function($q, $location){
         }
     }
 
-});
+};
