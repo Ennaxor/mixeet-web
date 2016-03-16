@@ -1,4 +1,4 @@
-mixeet.controller('landingCtrl', function($scope, $interval, $location, $state, $http, $rootScope){
+webAppController.landingCtrl = function($scope, $interval, $location, $state, $http, $rootScope){
 	
 	if($location.search().token){
 		var auth = {token:$location.search().token};
@@ -90,4 +90,4 @@ mixeet.controller('landingCtrl', function($scope, $interval, $location, $state, 
 		
 
 
-});
+};

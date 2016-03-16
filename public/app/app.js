@@ -1,7 +1,8 @@
+var webAppController = {};
 var webAppFactory = {};
 
 var mixeet = angular.module('mixeet', ['ui.router'])
-
+.controller(webAppController)
 .factory(webAppFactory)
 
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider){

@@ -1,4 +1,4 @@
-mixeet.controller('headerCtrl', function($scope, $location, $rootScope, $timeout, oauth){
+webAppController.headerCtrl = function($scope, $location, $rootScope, $timeout, userSvc){
 
 	 $rootScope.$watch(function() { 
       	return $location.path(); 
@@ -195,4 +195,4 @@ mixeet.controller('headerCtrl', function($scope, $location, $rootScope, $timeout
 	
 
 
-});
+};
