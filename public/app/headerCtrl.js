@@ -175,12 +175,12 @@ webAppController.headerCtrl = function($scope, $location, $rootScope, $timeout, 
 	
 	// OBTENCIÓN DE DATOS DEL USUARIO (NOMBRE, EMAIL E IMAGEN)
 	$scope.getUserData = function(){
-		userSvc.me().get({}, function(result){
-			/*if(result.error){
+		/*userSvc.me().get({}, function(result){
+			if(result.error){
 				//localStorage.removeItem("auth");	
 				//window.location = "/#/landing";
 			}
-			else{*/
+			else{
 				console.log("AAAAAAAAAAAAAAAaa");
 				$scope.usr = result;
 				//OBTENER SOLO EL NOMBRE, SIN APELLIDOS
@@ -189,7 +189,8 @@ webAppController.headerCtrl = function($scope, $location, $rootScope, $timeout, 
 			//}
 		}, function(){
 
-		});	
+		});	*/
+
 	}
 
 	$scope.getUserData();

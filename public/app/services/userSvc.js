@@ -10,6 +10,11 @@ webAppFactory.userSvc = function(apiSvc){
             return apiSvc.rest(this.base+"/me",{
                 get:{method:"GET", params:{}}
             });
+        },
+        info:function(){
+            return apiSvc.rest(this.base+"/:email", {
+                get:{method:"GET", params:{}}
+            });
         }
         //...
 	};
