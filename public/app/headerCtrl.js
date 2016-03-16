@@ -181,7 +181,7 @@ mixeet.controller('headerCtrl', function($scope, $location, oauth, $rootScope, $
 			$scope.usrname = res[0];
 		}, function(err){
 			localStorage.removeItem("auth");	
-			window.location = "/landing";
+			window.location = "/#/landing";
 		});
 
 
