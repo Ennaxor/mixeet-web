@@ -1,13 +1,13 @@
-mixeet.factory('user', function(api){
+mixeet.factory('userSvc', function(apiSvc){
 	return{
 		base: "users",
 		signin:function(){
-            return api.rest(this.base+"/signin",{
+            return apiSvc.rest(this.base+"/signin",{
                get:{method:"GET", params:{}}
             });
         },
 		me:function(){
-            return api.rest(this.base+"/me",{
+            return apiSvc.rest(this.base+"/me",{
                 get:{method:"GET", params:{}}
             });
         }

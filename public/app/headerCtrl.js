@@ -1,4 +1,4 @@
-mixeet.controller('headerCtrl', function($scope, $location, $rootScope, $timeout, user){
+mixeet.controller('headerCtrl', function($scope, $location, $rootScope, $timeout, userSvc){
 
 	 $rootScope.$watch(function() { 
       	return $location.path(); 
@@ -186,7 +186,7 @@ mixeet.controller('headerCtrl', function($scope, $location, $rootScope, $timeout
 		});*/
 
 	$scope.getUserData = function(){
-		user.me().get({}, function(result){
+		userSvc.me().get({}, function(result){
 			if(result.error){
 				//localStorage.removeItem("auth");	
 				//window.location = "/#/landing";

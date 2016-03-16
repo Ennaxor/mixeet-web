@@ -1,4 +1,4 @@
-mixeet.factory('api', function($resource){
+mixeet.factory('apiSvc', function($resource){
 	return {
         env:"dev",
         dev:{
