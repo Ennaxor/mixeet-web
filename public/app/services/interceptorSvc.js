@@ -1,4 +1,4 @@
-mixeet.factory('interceptor', function($q, $location){
+webAppFactory.interceptor = function($q, $location){
 	return {
         request: function(config){
             config.headers = config.headers || {};

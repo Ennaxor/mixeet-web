@@ -1,4 +1,4 @@
-mixeet.factory('geolocation', ['$q', '$window', function ($q, $window) {
+webAppFactory.geolocation = function ($q, $window) {
 	'use strict';
 
     function getCurrentPosition() {

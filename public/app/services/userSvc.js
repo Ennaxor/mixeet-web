@@ -1,4 +1,4 @@
-mixeet.factory('userSvc', function(apiSvc){
+webAppFactory.userSvc = function(apiSvc){
 	return{
 		base: "users",
 		signin:function(){

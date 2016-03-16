@@ -1,7 +1,10 @@
-var mixeet = angular.module('mixeet', ['ui.router']);
+var webAppFactory = {};
 
-/* RUTAS ... */ 
-mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider){
+var mixeet = angular.module('mixeet', ['ui.router'])
+
+.factory(webAppFactory)
+
+.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider){
 	$locationProvider.html5Mode({
 		enabled: false,
 		requireBase: false
@@ -105,34 +108,13 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider, $h
 		});
 		$urlRouterProvider.otherwise("/");
 		$httpProvider.interceptors.push('interceptor');
-	/*	.state('home', {   
-	      url: "/",
-	      templateUrl: static_path+"/home/main.tpl.html",
-	      controller: 'homeCtrl'
-	    })
-		.state('landing', {   
-	      url: "/landing"
-	      //templateUrl: static_path+"/home/main.tpl.html",
-	      //controller: 'landingCtrl'
-	    })
-		.state('collections', {
-			url: "/collections",
-	      	templateUrl: static_path+"/collections/main.tpl.html",
-	      	controller: 'collectionsCtrl'
-		})
-		.state('events', {
-			url: "/events",
-	      	templateUrl: static_path+"/events/main.tpl.html",
-	      	controller: 'eventsCtrl'
-		})
-		.state('achievements', {
-			url: "/achievements",
-	      	templateUrl: static_path+"/achievements/main.tpl.html",
-	      	controller: 'achievementsCtrl'
-		});*/
 
+})
 
+.run(function ($rootScope, $state) {
 
-
+    $rootScope.go = function (state, params) {
+        $state.go(state, params);
+    };
 });
 
