@@ -1,4 +1,4 @@
-mixeet.factory('oauth', function($http, $location){
+mixeet.factory('oauth', function($http, $location, api){
 	return {
         authGet : function(url, success_callback, error_callback){
 			if(localStorage.getItem("auth")){

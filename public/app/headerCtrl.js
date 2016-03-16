@@ -1,4 +1,4 @@
-mixeet.controller('headerCtrl', function($scope, $location, oauth, $rootScope, $timeout){
+mixeet.controller('headerCtrl', function($scope, $location, $rootScope, $timeout, user){
 
 	 $rootScope.$watch(function() { 
       	return $location.path(); 
@@ -174,16 +174,36 @@ mixeet.controller('headerCtrl', function($scope, $location, oauth, $rootScope, $
 	
 	
 	// OBTENCIÓN DE DATOS DEL USUARIO (NOMBRE, EMAIL E IMAGEN)
-	oauth.authGet("/users/me", function(res){
+	/*oauth.authGet("/users/me", function(res){
 			$scope.usr = res;
 			//OBTENER SOLO EL NOMBRE, SIN APELLIDOS
 			var res = $scope.usr.name.split(" ");
 			$scope.usrname = res[0];
 		}, function(err){
-			console.log(err);
+			console.log("A ver que error:"+err);
 			//localStorage.removeItem("auth");	
 			//window.location = "/#/landing";
-		});
+		});*/
+
+	$scope.getUserData = function(){
+		user.me().get({}, function(result){
+			if(result.error){
+				//localStorage.removeItem("auth");	
+				//window.location = "/#/landing";
+			}
+			else{
+				$scope.usr = result.data;
+				//OBTENER SOLO EL NOMBRE, SIN APELLIDOS
+				var res = $scope.usr.name.split(" ");
+				$scope.usrname = res[0];
+			}
+		}, function(){
+
+		});	
+	}
+
+	$scope.getUserData();
+	
 
 
 });

@@ -1,7 +1,7 @@
 var mixeet = angular.module('mixeet', ['ui.router']);
 
 /* RUTAS ... */ 
-mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
+mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider){
 	$locationProvider.html5Mode({
 		enabled: false,
 		requireBase: false
@@ -22,7 +22,7 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 	//var static_path ="static/app";
 
-	$urlRouterProvider.otherwise("/");
+	
 	
 	$stateProvider
 		.state('landing', {
@@ -103,6 +103,8 @@ mixeet.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	            	}
 	        	}  
 		});
+		$urlRouterProvider.otherwise("/");
+		$httpProvider.interceptors.push('interceptor');
 	/*	.state('home', {   
 	      url: "/",
 	      templateUrl: static_path+"/home/main.tpl.html",
