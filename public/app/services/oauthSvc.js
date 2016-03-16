@@ -12,7 +12,7 @@ mixeet.factory('oauth', function($http, $location){
 				});
 			}
 			else{
-				window.location = "/#/landing";
+				//window.location = "/#/landing";
 			}
 		},
 		authPost : function(url, data, success_callback, error_callback){

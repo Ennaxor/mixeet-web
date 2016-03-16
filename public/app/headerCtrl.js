@@ -180,8 +180,9 @@ mixeet.controller('headerCtrl', function($scope, $location, oauth, $rootScope, $
 			var res = $scope.usr.name.split(" ");
 			$scope.usrname = res[0];
 		}, function(err){
-			localStorage.removeItem("auth");	
-			window.location = "/#/landing";
+			console.log(err);
+			//localStorage.removeItem("auth");	
+			//window.location = "/#/landing";
 		});
 
 
