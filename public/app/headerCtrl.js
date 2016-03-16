@@ -190,7 +190,9 @@ webAppController.headerCtrl = function($scope, $location, $rootScope, $timeout, 
 		}, function(){
 
 		});	*/
-
+		userSvc.info().get({}, function(result){
+			console.log("Resutlado de info..."+result);
+		});
 	}
 
 	$scope.getUserData();
