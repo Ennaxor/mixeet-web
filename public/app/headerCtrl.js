@@ -174,7 +174,7 @@ mixeet.controller('headerCtrl', function($scope, $location, oauth, $rootScope, $
 	
 	
 	// OBTENCIÓN DE DATOS DEL USUARIO (NOMBRE, EMAIL E IMAGEN)
-	access.authGet("/users/me", function(res){
+	oauth.authGet("/users/me", function(res){
 			$scope.usr = res;
 			//OBTENER SOLO EL NOMBRE, SIN APELLIDOS
 			var res = $scope.usr.name.split(" ");
