@@ -13,11 +13,6 @@ webAppController.headerCtrl = function($scope, $location, $rootScope, $timeout, 
 			$scope.profileSelected = false; $scope.achievementsSelected = false; $scope.collectionSelected = false;
 			$scope.listsSelected = false;
 	      }
-	      else if(a == '/achievements'){
-	      	$scope.sectionSelected = "My Achievements";	$scope.achievementsSelected = true;	$scope.allfalseC();
-			$scope.allfalseE();	$scope.profileSelected = false;	$scope.collectionSelected = false; $scope.eventsSelected = false;
-			$scope.listsSelected = false;
-	      }
 	  });
 
 	 $timeout(function(){
@@ -40,16 +35,6 @@ webAppController.headerCtrl = function($scope, $location, $rootScope, $timeout, 
 			$scope.eventsSelected = false;
 			$scope.listsSelected = false;
 		}
-		else if(page == 'collections'){
-			$scope.sectionSelected = "My Collection";
-			$scope.collectionSelected = true;
-
-			$scope.allfalseE();
-
-			$scope.profileSelected = false;
-			$scope.achievementsSelected = false;
-			$scope.eventsSelected = false;
-		}
 		else if(page == 'events'){
 			$scope.sectionSelected = "My Events";
 			$scope.eventsSelected = true;
@@ -61,19 +46,6 @@ webAppController.headerCtrl = function($scope, $location, $rootScope, $timeout, 
 			$scope.collectionSelected = false;
 			$scope.listsSelected = false;
 		}
-		else if(page == 'achievements'){			
-			$scope.sectionSelected = "My Achievements";
-			$scope.achievementsSelected = true;
-
-			$scope.allfalseC();
-			$scope.allfalseE();
-
-			$scope.profileSelected = false;
-			$scope.collectionSelected = false;
-			$scope.eventsSelected = false;
-			$scope.listsSelected = false;
-		}
-
 
 		$location.path("/"+page);
 

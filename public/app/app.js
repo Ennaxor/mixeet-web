@@ -33,7 +33,6 @@ var mixeet = angular.module('mixeet', ['ui.router', 'ngResource'])
 			url: "/landing",
 			onEnter: function ($state) {
 	            if (getJSONLocal("auth")) {
-	               // $rootScope.go("app.home");
 	               $state.go('app');
 	            }
         	},
@@ -51,7 +50,7 @@ var mixeet = angular.module('mixeet', ['ui.router', 'ngResource'])
 			templateUrl: "/app/main.tpl.html",
 			controller: "headerCtrl"
 		})
-		.state('app.home', {
+		.state('app.home', { //profile
 			url: "home",
 			onEnter: function ($state) {
 	            if (!getJSONLocal("auth")) {
@@ -64,7 +63,7 @@ var mixeet = angular.module('mixeet', ['ui.router', 'ngResource'])
 	                controller: 'homeCtrl'
 	            	}
 	        	}  
-		})
+		})/*
 		.state('app.collections', {
 			url: "collections",
 			onEnter: function ($state) {
@@ -78,7 +77,7 @@ var mixeet = angular.module('mixeet', ['ui.router', 'ngResource'])
 	                controller: 'collectionsCtrl'
 	            	}
 	        	}  
-		})
+		})*/
 		.state('app.events', {
 			url: "events",
 			onEnter: function ($state) {
@@ -92,7 +91,7 @@ var mixeet = angular.module('mixeet', ['ui.router', 'ngResource'])
 	                controller: 'eventsCtrl'
 	            	}
 	        	}  
-		})
+		})/*
 		.state('app.achievements', {
 			url: "achievements",
 			onEnter: function ($state) {
@@ -106,7 +105,8 @@ var mixeet = angular.module('mixeet', ['ui.router', 'ngResource'])
 	                controller: 'achievementsCtrl'
 	            	}
 	        	}  
-		});
+		})*/
+		;
 		$urlRouterProvider.otherwise("/");
 		$httpProvider.interceptors.push('interceptor');
 

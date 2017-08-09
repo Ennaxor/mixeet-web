@@ -1,5 +1,0 @@
-webAppController.achievementsCtrl = function($scope){
-
-	
-
-};
